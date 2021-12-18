@@ -5,7 +5,7 @@
   "description": "[![Actions Status](https://github.com/Pavel-nk95/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/Pavel-nk95/frontend-project-lvl2/actions)",
   "main": "./src/diff.js",
   "scripts": {
-    "test": "npx jest --watch --bail"
+    "test": "npx jest --bail"
   },
   "bin": {
     "gendiff": "bin/gendiff.js"

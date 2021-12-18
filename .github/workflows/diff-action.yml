@@ -1,4 +1,4 @@
-name: Diff-action
+name: diff-check
 
 on:
   - push
