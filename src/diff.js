@@ -11,8 +11,8 @@ const getResultStr = (str) => {
 const genDiff = (filepath1, filepath2) => {
   const path1 = path.resolve(process.cwd(), filepath1);
   const path2 = path.resolve(process.cwd(), filepath2);
-  const data1 = JSON.parse(fs.readFileSync(path1));
-  const data2 = JSON.parse(fs.readFileSync(path2));
+  const data1 = JSON.parse(fs.readFileSync(path1, 'utf-8'));
+  const data2 = JSON.parse(fs.readFileSync(path2, 'utf-8'));
 
   const allKeys = _.sortBy(_.uniq(Object.keys(data1).concat(Object.keys(data2))));
   const resultData = allKeys.reduce((acc, key) => {
