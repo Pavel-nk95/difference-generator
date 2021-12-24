@@ -10,8 +10,11 @@
 ### Test Coverage Badge:
 [![Test Coverage](https://api.codeclimate.com/v1/badges/1837025696761d238ccf/test_coverage)](https://codeclimate.com/github/Pavel-nk95/frontend-project-lvl2/test_coverage)
 
-### Example of the project:
+### Example of comparing flat JSON files:
 [![asciicast](https://asciinema.org/a/456155.svg)](https://asciinema.org/a/456155)
+
+### Example of comparing flat YAML files:
+[![asciicast](https://asciinema.org/a/458310.svg)](https://asciinema.org/a/458310)
 
 
 

@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import _ from 'lodash';
+import parse from './parsers.js';
 
 const getResultStr = (str) => {
   const result = str.slice(1, -1).replaceAll('"', '')
@@ -8,11 +9,17 @@ const getResultStr = (str) => {
   return `{\n${result}\n}`;
 };
 
+const generateData = (filepath) => {
+  const fullPath = path.resolve(process.cwd(), filepath);
+  const presentData = fs.readFileSync(fullPath, 'utf-8');
+  const fileExt = path.extname(filepath);
+  const result = parse(presentData, fileExt);
+  return result;
+};
+
 const genDiff = (filepath1, filepath2) => {
-  const path1 = path.resolve(process.cwd(), filepath1);
-  const path2 = path.resolve(process.cwd(), filepath2);
-  const data1 = JSON.parse(fs.readFileSync(path1, 'utf-8'));
-  const data2 = JSON.parse(fs.readFileSync(path2, 'utf-8'));
+  const data1 = generateData(filepath1);
+  const data2 = generateData(filepath2);
 
   const allKeys = _.sortBy(_.uniq(Object.keys(data1).concat(Object.keys(data2))));
   const resultData = allKeys.reduce((acc, key) => {
