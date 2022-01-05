@@ -18,3 +18,6 @@
 
 ### Example of comparing JSON and YAML files. Formatter: 'plain':
 [![asciicast](https://asciinema.org/a/459967.svg)](https://asciinema.org/a/459967)
+
+### Example of comparing JSON and YAML files. Formatter: 'json':
+[![asciicast](https://asciinema.org/a/460058.svg)](https://asciinema.org/a/460058)
