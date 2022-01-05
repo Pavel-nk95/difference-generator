@@ -10,8 +10,11 @@
 ### Test Coverage Badge:
 [![Test Coverage](https://api.codeclimate.com/v1/badges/1837025696761d238ccf/test_coverage)](https://codeclimate.com/github/Pavel-nk95/frontend-project-lvl2/test_coverage)
 
-### Example of comparing JSON files:
+### Example of comparing JSON files. Formatter: 'stylish':
 [![asciicast](https://asciinema.org/a/459767.svg)](https://asciinema.org/a/459767)
 
-### Example of comparing YAML files:
+### Example of comparing YAML files. Formatter: 'stylish':
 [![asciicast](https://asciinema.org/a/459768.svg)](https://asciinema.org/a/459768)
+
+### Example of comparing JSON and YAML files. Formatter: 'plain':
+[![asciicast](https://asciinema.org/a/459967.svg)](https://asciinema.org/a/459967)

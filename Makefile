@@ -11,7 +11,7 @@ lint:
 	npx eslint .
 
 link:
-	sudo npm link
+	npm link
 
 test:
 	npm test

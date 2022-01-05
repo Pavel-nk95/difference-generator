@@ -2,8 +2,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import _ from 'lodash';
 import parse from './parsers/parser.js';
-import renderStylish from './formatters/stylish.js';
-import renderPlain from './formatters/plain.js';
+import render from './formatters/index.js';
 
 function generateData(filepath) {
   const fullPath = path.resolve(process.cwd(), filepath);
@@ -66,15 +65,12 @@ const buildAstTree = (data1, data2 = {}, depth = 1) => {
   return result;
 };
 
-const genDiff = (filepath1, filepath2, option = 'stylish') => {
+const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const data1 = generateData(filepath1);
   const data2 = generateData(filepath2);
 
   const astTree = buildAstTree(data1, data2, 1);
-  if (option === 'plain') {
-    return renderPlain(astTree);
-  }
-  return renderStylish(astTree);
+  return render(astTree, formatName);
 };
 
 export default genDiff;
