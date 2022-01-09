@@ -3,7 +3,7 @@
 import * as fs from 'fs';
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
-import { expect, test, beforeAll, describe } from '@jest/globals';
+import { expect, test, describe } from '@jest/globals';
 import genDiff from '../src/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -13,18 +13,12 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
 const expectedResult = {
-  json: null,
-  plain: null,
-  stylish: null,
+  json: readFile('expectedJsonResult.txt'),
+  plain: readFile('expectedPlainResult.txt'),
+  stylish: readFile('expectedStylishResult.txt'),
 };
 
 const extensions = ['json', 'yaml', 'yml'];
-
-beforeAll(() => {
-  expectedResult.stylish = readFile('expectedStylishResult.txt');
-  expectedResult.plain = readFile('expectedPlainResult.txt');
-  expectedResult.json = readFile('expectedJsonResult.txt');
-});
 
 describe('Check correct generate diff. Formatters: stylish, plain, json', () => {
   test.each(extensions)('comparison file format: %s', (extension) => {
