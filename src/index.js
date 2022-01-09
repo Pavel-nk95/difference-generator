@@ -7,7 +7,7 @@ import render from './formatters/index.js';
 function generateData(filepath) {
   const fullPath = path.resolve(process.cwd(), filepath);
   const presentData = fs.readFileSync(fullPath, 'utf-8');
-  const fileExt = path.extname(filepath);
+  const fileExt = path.extname(filepath).substring(1);
   const result = parse(presentData, fileExt);
   return result;
 }
