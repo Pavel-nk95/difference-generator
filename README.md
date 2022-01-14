@@ -8,10 +8,6 @@ Utility Features:
 - support for different formats - json, yaml;
 - generate report in three different views;
 
-### Installation
-
-```npm i gendiff```
-
 ### Run
 
 ```
