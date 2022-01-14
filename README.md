@@ -6,7 +6,7 @@ Project 'Difference Generator'. The project implements a utility to find differe
 
 Utility Features:
 - support for different formats - json, yaml;
-- report generation in three different views;
+- generate report in three different views;
 
 ### Installation
 
