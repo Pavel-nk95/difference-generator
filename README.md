@@ -1,3 +1,31 @@
+### 🔹 Difference Generator 🔹
+
+Project 'Difference Generator'. The project implements a utility to find differences in configuration files.
+
+### Description
+
+Utility Features:
+- support for different formats - json, yaml;
+- report generation in three different views;
+
+### Installation
+
+```npm i project-gendiff```
+
+### Run
+
+```
+$ gendiff --help
+Usage: gendiff [options] <firstConfig> <secondConfig>
+
+Compares two configuration files and shows a difference.
+
+Options:
+-V, --version        output the version number
+-f, --format [type]  Output format (default: "stylish")
+-h, --help           output usage information
+```
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Pavel-nk95/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/Pavel-nk95/frontend-project-lvl2/actions)
 

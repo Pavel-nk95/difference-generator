@@ -15,7 +15,7 @@ const renderObj = (currentValue, replacer, depth) => {
 
 const render = (astTree) => {
   const space = '    ';
-  const iter = (data, defaultDepth = 1) => {
+  const iter = (data, depth) => {
     const lines = data.map((element) => {
       const {
         name,
@@ -23,14 +23,13 @@ const render = (astTree) => {
         value,
         children,
         oldValue,
-        depth: currentDepth,
       } = element;
 
-      const currentIndent = space.repeat(currentDepth).slice(0, -2);
-      const currentValue = _.isPlainObject(value) ? renderObj(value, space, currentDepth + 1)
+      const currentIndent = space.repeat(depth).slice(0, -2);
+      const currentValue = _.isPlainObject(value) ? renderObj(value, space, depth + 1)
         : value;
       const currentOldValue = _.isPlainObject(oldValue)
-        ? renderObj(oldValue, space, currentDepth + 1) : oldValue;
+        ? renderObj(oldValue, space, depth + 1) : oldValue;
 
       switch (true) {
         case status === 'added':
@@ -38,7 +37,7 @@ const render = (astTree) => {
         case status === 'deleted':
           return `${currentIndent}- ${name}: ${currentValue}`;
         case status === 'nested':
-          return `${currentIndent}  ${name}: ${iter(children, currentDepth)}`;
+          return `${currentIndent}  ${name}: ${iter(children, depth + 1)}`;
         case status === 'changed':
           return `${currentIndent}- ${name}: ${currentOldValue}\n${currentIndent}+ ${name}: ${currentValue}`;
         case status === 'unchanged':
@@ -51,10 +50,10 @@ const render = (astTree) => {
     });
     return [
       '{',
-      ...lines, `${space.repeat(defaultDepth)}}`,
+      ...lines, `${space.repeat(depth - 1)}}`,
     ].join('\n');
   };
-  return iter(astTree, 0);
+  return iter(astTree, 1);
 };
 
 export default render;
