@@ -10,7 +10,7 @@ Utility Features:
 
 ### Installation
 
-```npm i project-gendiff```
+```npm i gendiff```
 
 ### Run
 
