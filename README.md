@@ -16,14 +16,14 @@ Utility Features:
 
 ```
 $ gendiff --help
-Usage: gendiff [options] <firstConfig> <secondConfig>
+Usage: gendiff [options] <filepath1> <filepath2>
 
 Compares two configuration files and shows a difference.
 
 Options:
--V, --version        output the version number
--f, --format [type]  Output format (default: "stylish")
--h, --help           output usage information
+  -V, --version        output the version number
+  -f, --format [type]  output format (default: "stylish")
+  -h, --help           output usage information
 ```
 
 ### Hexlet tests and linter status:
